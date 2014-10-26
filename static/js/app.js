@@ -12,8 +12,8 @@ var collections = {
 var relatedCollections = {
   "Ryan Hoover Favs" : ["Yo! Check It Out", "Designer Tools", "Fashion Hunt"],
   "Yo! Check It Out" : ["Ryan Hoover Favs", "Designer Tools", "Fashion Hunt"],
-  "Designer Tools" : ["Yo! Check It Out", "Stock Photography", "Fashion Hunt"],
-  "Stock Photography" : ["Yo! Check It Out", "Designer Tools", "Fashion Hunt"],
+  "Designer Tools" : ["Snoop Dog <3 Gifs", "Stock Photography", "Fashion Hunt"],
+  "Stock Photography" : ["Snoop Dog <3 Gifs", "Designer Tools", "Fashion Hunt"],
   "Fashion Hunt" : ["Yo! Check It Out", "Designer Tools", "Stock Photography"]
 };
 
