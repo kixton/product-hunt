@@ -1,0 +1,146 @@
+body {
+  font-family: Arial;
+}
+
+header {
+  background: #fff;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  box-shadow: 0px 1px 0px 0px rgba(83,69,64,0.16), 0px 1px 2px 0px rgba(0,0,0,0.1);;
+}
+
+.logo {
+  width: 50px;
+  float: left;
+  margin: 10px;
+}
+
+.title {
+  font-size: 40px;
+  color: #DA552F;
+  font-weight: bold;
+  float: left;
+  /*display: inline-block;*/
+  margin-bottom: 10px;
+  margin: 10px
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.screenshot {
+  height: 100%;
+  width: 100%;
+}
+
+.all-collections {
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.single-collection-container {
+  border: 10px solid #534540;
+  width: 370px;
+  height: 480px;
+  display: inline-block;
+  margin: 20px;
+
+}
+
+.product {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #999;
+  margin: 5px;
+}
+
+.follow {
+  text-align: center;
+  font-weight: bold;
+  border: 3px solid #00B27F;
+  margin: 10px;
+  padding: 10px;
+  background: #00B27F;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.follow:hover {
+  border: 3px solid #007f5b;
+}
+
+.user-info-container {
+  padding: 10px;
+  padding-top: 0;
+  background: #534540;
+  /*background: #756966;*/
+  color: #fff;
+  text-align: left;
+}
+
+.collection-name {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.collection-info {
+  display: inline-block;
+}
+
+.products-container {
+  padding: 10px;
+}
+
+.single-collection-container:hover {
+  cursor: pointer;
+}
+
+.single-collection-container:hover .screenshot {
+  opacity: 0.4;
+}
+
+.collection-votes {
+  background: #EDECEB;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  color: #534540;
+  float: right;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 5px;
+}
+
+.collection-votes:hover .fa {
+  color: #DA552F;
+}
+
+.fa-sort-up {
+  font-size: 30px;
+}
+
+.suggest {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 5px;
+  background: #DA552F;
+  color: #fff;
+}
+
+.suggest:hover {
+  background: #DA552F;
+}

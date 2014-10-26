@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Product Hunt Collections</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+  <header>
+    <img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/303943-1d6fe280010ae474ddd9f37792a6b604-medium_jpg.jpg?buster=1386178935" class="logo"> 
+    
+    <div class="title">
+      Product Hunt Collections
+    </div>
+  </header>
+
+    <div class="all-collections">
+      <!-- collections will render here -->
+    </div> 
+
+    </div>
+
+  </div> <!-- container -->
+<!-- user-id={{ id }} -->
+<!-- <div class="screenshot suggest"><br><br>Submit Product</div> -->
+
+  <script id="user-info-template" type="text/x-handlebars-template">
+
+
+    <div class="single-collection-container" collection-id='{{ collection_name }}'>
+      <div class="user-info-container">
+        <img src={{ image_url.48px }} class="avatar"> 
+        <div class="collection-info">
+          <span class="collection-name"> {{ collection_name }} </span><br>
+          <span class="user-name"> {{ name }} </span>
+        </div>
+        <div class="collection-votes">
+          <span class="fa fa-sort-up"></span><br>
+          100
+        </div>
+      </div>
+
+      <div class="products-container" id={{ id }}>
+
+      </div>
+      <div class="follow">Follow</div>
+
+    </div>
+  </script>
+
+
+  <script id="collection-template" type="text/x-handlebars-template">
+    <div class="product" product-id={{ id }}>
+      <img src={{ screenshot_url.300px }} class="screenshot"><br>
+      
+    </div>
+
+  </script>
+
+
+  <script src="js/handlebars-v1.3.0.js"></script>
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
