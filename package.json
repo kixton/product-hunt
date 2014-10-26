@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/kixton/product-hunt/issues"
   },
-  "homepage": "https://github.com/kixton/product-hunt"
+  "homepage": "https://github.com/kixton/product-hunt",
+  "dependencies": {
+    "express": "^4.10.0",
+    "request": "^2.46.0"
+  }
 }
