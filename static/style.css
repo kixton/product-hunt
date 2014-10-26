@@ -26,9 +26,10 @@ header {
   color: #DA552F;
   font-weight: bold;
   float: left;
+  line-height: 40px;
   /*display: inline-block;*/
-  margin-bottom: 10px;
-  margin: 10px
+  /*margin-bottom: 10px;*/
+  /*margin: 10px*/
 }
 
 .avatar {
@@ -139,20 +140,6 @@ header {
   font-size: 30px;
 }
 
-.suggest {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  display: inline-block;
-  margin: 5px;
-  background: #DA552F;
-  color: #fff;
-}
-
-.suggest:hover {
-  background: #DA552F;
-}
-
 .collection-header {
   background: #534540;
   color: #fff;
@@ -228,7 +215,7 @@ header {
 .suggest-follow {
   float: right;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 80%;
 }
 
@@ -248,12 +235,12 @@ header {
 }
 
 .suggest-btn {
-  background: #827774;
-  border-color: #827774;
+  background: #DA552F;
+  border-color: #DA552F;
 }
 
 .suggest-btn:hover {
-  border: 3px solid #333;
+  border: 3px solid #db4920;
   cursor: pointer;
 }
 
@@ -291,10 +278,45 @@ header {
   margin: 5px 0;
   border-radius: 20px;
   background: #00B27F;
- border: 3px solid #00B27F;
+  border: 3px solid #00B27F;
+  color: #fff;
 }
 
 .related-collections-plain:hover {
   background: #00B27F;
   border: 3px solid #007f5b;
+}
+
+.title-tagline {
+  font-size: 20px;
+  line-height: 22px;
+  color: #9C9999;
+  margin: 0;
+  display: block;
+  font-weight: none;
+}
+
+.single-collection-header-votes {
+  display: inline-block;
+  background: #EDECEB;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  color: #534540;
+  float: left;
+  /*margin: 20px 0 0 40px;*/
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.single-collection-header-votes:hover {
+  cursor: pointer;
+}
+
+.single-collection-header-votes:hover .fa {
+  color: #DA552F;
 }
