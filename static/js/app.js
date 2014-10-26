@@ -14,11 +14,12 @@ var relatedCollections = {
   "Yo! Check It Out" : ["Ryan Hoover Favs", "Designer Tools", "Fashion Hunt"],
   "Designer Tools" : ["Snoop Dog <3 Gifs", "Stock Photography", "Fashion Hunt"],
   "Stock Photography" : ["Snoop Dog <3 Gifs", "Designer Tools", "Fashion Hunt"],
-  "Fashion Hunt" : ["Yo! Check It Out", "Designer Tools", "Stock Photography"]
+  "Fashion Hunt" : ["Yo! Check It Out", "Designer Tools", "Stock Photography"],
+  "Snoop Dogg <3 Gifs" : ["Designer Tools", "Stock Photography", "Ryan Hoover Favs"],
 };
 
 var masterCollections = {
-  "Snoop Dog <3 Gifs" : {24656: [6930, 8950, 8466, 8375, 7914, 7193, 9672, 7228, 2788, 1503, 9417, 2887]},
+  "Snoop Dogg <3 Gifs" : {24656: [6930, 8950, 8466, 7914, 7193, 9672, 7228, 2788, 2887]},
   "Ryan Hoover Favs" : {2: [8977, 8710, 9980, 9997, 9996, 9948, 9957, 9934, 9819, 9695]},
   "Yo! Check It Out" : { 13384: [3486, 4897, 9695, 9033, 5918, 4828, 4500, 4871, 5021]},
   "Designer Tools" : {13190: [8164, 3697, 9311, 2144, 9098, 2758, 4384, 2733, 9512, 9118]},
