@@ -4,6 +4,7 @@ body {
 }
 
 header {
+  z-index: 1;
   background: #fff;
   height: 70px;
   width: 100%;
@@ -44,7 +45,7 @@ header {
 }
 
 .all-collections {
-  margin-top: 50px;
+  margin-top: 100px;
   width: 100%;
   text-align: center;
 }
@@ -279,4 +280,20 @@ header {
 
 .screenshot-lg {
   border: 1px solid #666;
+}
+
+.related-collections-plain {
+  text-align: left;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #000;
+  margin: 5px 0;
+  border-radius: 20px;
+  background: #00B27F;
+ border: 3px solid #00B27F;
+}
+
+.related-collections-plain:hover {
+  background: #00B27F;
+  border: 3px solid #007f5b;
 }

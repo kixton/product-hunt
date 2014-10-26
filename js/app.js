@@ -10,16 +10,19 @@ var collections = {
 
 
 var relatedCollections = {
-  "Ryan Hoover Favs" : ["Snoop Dogg's Hunts", "Erik's Top 10", "Alexis Ohanian Approved"]
+  "Ryan Hoover Favs" : ["Yo! Check It Out", "Designer Tools", "Fashion Hunt"],
+  "Yo! Check It Out" : ["Ryan Hoover Favs", "Designer Tools", "Fashion Hunt"],
+  "Designer Tools" : ["Yo! Check It Out", "Stock Photography", "Fashion Hunt"],
+  "Stock Photography" : ["Yo! Check It Out", "Designer Tools", "Fashion Hunt"],
+  "Fashion Hunt" : ["Yo! Check It Out", "Designer Tools", "Stock Photography"]
 };
 
 var masterCollections = {
   "Ryan Hoover Favs" : {2: [8977, 8710, 9980, 9997, 9996, 9948, 9957, 9934, 9819, 9695]},
-  "Snoop Dog's Hunts" : {123: [8977, 8710]},
-  // "Yo! Check It" : { 13384: [3486, 4897, 9695, 9033, 5918, 4828, 4500, 4871, 5021]},
+  "Yo! Check It Out" : { 13384: [3486, 4897, 9695, 9033, 5918, 4828, 4500, 4871, 5021]},
   "Designer Tools" : {13190: [8164, 3697, 9311, 2144, 9098, 2758, 4384, 2733, 9512, 9118]},
-  "Stock Photography" : { 123: [2480, 9622, 7140, 4157, 5732, 1882, 4850, 5144, 4199]},
-  // "Fashion Hunt" : {93526: [1301, 5090, 2701, 5875, 3586, 7949, 7404, 4876, 8454, 9113]},
+  "Stock Photography" : { 8319: [2480, 9622, 7140, 4157, 5732, 1882, 4850, 5144, 4199]},
+  "Fashion Hunt" : {93526: [1301, 5090, 2701, 5875, 3586, 7949, 7404, 4876, 8454, 9113]},
 };
 
 
@@ -29,13 +32,11 @@ var getSingleItem = function(productId, userId) {
     url: 'http://localhost:4000/?url=v1/posts/' + productId,
     dataType: 'json',  
     success: function(json_results) {
-      console.log(json_results);
       var source = $("#collection-template").html();
       var template = Handlebars.compile(source);
       var newHTML = template(json_results.post);
       // (tbu) refactor, use database to store collection names; use collection-id as UID
       var idToAppend = "#" + userId ;
-      console.log(idToAppend);
 
       $(".all-collections").find(idToAppend).append(newHTML);
      }
@@ -64,14 +65,10 @@ var showCollectionDetails = function(collectionId) {
   var collection = masterCollections[collectionId];
 
   for (var userId in collection) {
-    console.log(userId);
-    getUserInfo2(userId);
-
     $.each( collection[userId] , function(index, productId) {
       console.log(productId);
-    });
+    })
   }
-
 };
 
 var getUserAvatar = function(userId, hollaback) {
@@ -92,7 +89,7 @@ var getProductInfo2 = function(productId) {
     url: 'http://localhost:4000/?url=v1/posts/' + productId,
     dataType: 'json',  
     success: function(json_results) {
-      console.log(json_results);
+      // console.log(json_results);
       var source = $("#single-collection-details-template").html();
       var template = Handlebars.compile(source);
       var newHTML = template(json_results.post);
@@ -104,6 +101,60 @@ var getProductInfo2 = function(productId) {
 
 $(document).ready(function() {
   console.log("doc ready");
+  $(".single-collection-details").hide();
+  $(".all-collections").show();
+
+  $.each(masterCollections, function(collectionName, collectionInfo) {
+    $.each(collectionInfo, function(userId, collectionArray) {
+
+      getUserInfo(userId, collectionName, function() {
+        $.each(collectionArray, function(index, productId) {
+          if ( index < 9 ) {
+            getSingleItem(productId, userId);
+          } 
+        });
+      });
+    });
+  });
+
+  $(".all-collections").on("click", ".single-collection-container", function() {
+      $(".all-collections").hide();
+      $(".single-collection-details").show();
+      var collectionId = $(this).attr("collection-id");
+      showCollectionDetails(collectionId);
+      $(".collection-title-lg").append(collectionId);
+      var singleCollection = masterCollections[collectionId];
+      console.log(singleCollection);
+
+      var collectionArray;
+
+      for (var userId in singleCollection) {
+        console.log(userId);
+        collectionArray = singleCollection[userId];
+        console.log(collectionArray.length);
+        $(".collection-count").append(collectionArray.length);
+        // API request to get user info
+      }
+
+      $.each(collectionArray, function(index, productId) {
+        getProductInfo2(productId);
+      });
+
+      var relatedArray = relatedCollections[collectionId];
+      $.each(relatedArray, function(index, relatedCollectionName) {
+        console.log(relatedCollectionName);
+        var divToAppend = "<div class='related-collections-plain'>" + relatedCollectionName + "</div>";
+        $(".related-collections-container").append(divToAppend);
+
+
+      });
+
+    });
+
+});
+
+var clickSingleCollection = function() {
+  // get collectionName
 
   var collectionName = "Ryan Hoover Favs";
   var singleCollection = masterCollections['Ryan Hoover Favs'];
@@ -127,41 +178,19 @@ $(document).ready(function() {
   var relatedArray = relatedCollections[collectionName];
   $.each(relatedArray, function(index, relatedCollectionName) {
     console.log(relatedCollectionName);
-    var collectionObject = masterCollections[relatedCollectionName];
-    console.log(collectionObject);
-    for (var key in collectionObject) {
-      console.log(key);
-      // look up user avatar based on key
-      getUserAvatar(key, function(data) {
-        console.log(data);
-      });
-    }
-    
+    var divToAppend = "<div class='related-collections-plain'>" + relatedCollectionName + "</div>";
+    $(".related-collections-container").append(divToAppend);
+
+    // ran out of time for this...
+    // var collectionObject = masterCollections[relatedCollectionName];
+    // console.log(collectionObject);
+    // for (var key in collectionObject) {
+    //   console.log(key);
+    //   // look up user avatar based on key
+    //   getUserAvatar(key, function(data) {
+    //     console.log(data);
+    //   });
+    // }
+
   });
-
-
-
-  // $.each(masterCollections, function(collectionName, collectionInfo) {
-  //   $.each(collectionInfo, function(userId, collectionArray) {
-
-  //     getUserInfo(userId, collectionName, function() {
-  //       $.each(collectionArray, function(index, productId) {
-  //         if ( index < 9 ) {
-  //           getSingleItem(productId, userId);
-  //         } 
-  //       });
-  //     });
-  //   });
-  // });
-
-  // showCollectionDetails("Ryan Hoover Hunts");
-
-  // $(".all-collections").on("click", ".single-collection-container", function() {
-  //     var collectionId = $(this).attr("collection-id");
-  //     console.log(collectionId);
-
-  //     showCollectionDetails(collectionId);
-
-  //   });
-
-});
+}
