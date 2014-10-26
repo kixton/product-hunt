@@ -1,5 +1,6 @@
 body {
   font-family: Arial;
+  margin: auto;
 }
 
 header {
@@ -34,6 +35,7 @@ header {
   width: 40px;
   border-radius: 100%;
   margin-right: 10px;
+  float: left;
 }
 
 .screenshot {
@@ -42,7 +44,7 @@ header {
 }
 
 .all-collections {
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
   text-align: center;
 }
@@ -53,7 +55,7 @@ header {
   height: 480px;
   display: inline-block;
   margin: 20px;
-
+  vertical-align: top;
 }
 
 .product {
@@ -123,6 +125,11 @@ header {
   line-height: 5px;
 }
 
+.left {
+  float: left;
+  margin-right: 10px;
+}
+
 .collection-votes:hover .fa {
   color: #DA552F;
 }
@@ -144,3 +151,128 @@ header {
 .suggest:hover {
   background: #DA552F;
 }
+
+.collection-header {
+  background: #534540;
+  color: #fff;
+  margin-top: 101px;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.collection-title-lg {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 20px;
+}
+
+.bullet {
+  margin: 0 20px;
+  font-size: 24px;
+}
+
+.colletion-summary {
+  position: relative;
+
+}
+
+.collection-products {
+  padding: 10px;
+  text-align: center;
+}
+
+.related-collections,
+.product-details {
+  background: #fff;
+  border: 5px solid #534540;
+  width: 250px;
+  height: 230px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  padding: 10px;
+}
+
+.product-details img {
+  width: 250px;
+  height: 140px;
+  margin: 10px 0;
+}
+
+.deets {
+  display: block;
+  text-align: left;
+}
+
+.related-header,
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #534540;
+}
+
+
+.product-tagline {
+  font-size: 18px;
+  font-style: italic;
+  color: #9C9999;
+}
+
+.suggest-follow {
+  float: right;
+  position: absolute;
+  top: 0;
+  left: 80%;
+}
+
+.button {
+  background: #00B27F;
+  display: inline-block;
+  margin: 10px;
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: 3px solid #00B27F;
+  font-weight: bold;
+}
+
+.follow-btn:hover {
+  border: 3px solid #007f5b;
+  cursor: pointer;
+}
+
+.suggest-btn {
+  background: #827774;
+  border-color: #827774;
+}
+
+.suggest-btn:hover {
+  border: 3px solid #333;
+  cursor: pointer;
+}
+
+.related-hunts {
+  list-style-type: none;
+  padding-top: 5px;
+  font-size: 20px;
+  text-align: left;
+  margin: 10px 0;
+  width: 100%;
+  height: 50px;
+}
+
+.related-collection-name {
+  float: left;
+  display: inline-block;
+  width: 140px;
+  height: 30px;
+}
+
+.related-hunts:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+

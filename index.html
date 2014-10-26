@@ -19,9 +19,71 @@
     </div>
   </header>
 
+
+
+
     <div class="all-collections">
       <!-- collections will render here -->
     </div> 
+
+    <div class="single-collection-details">
+      <div class="collection-header">
+        <div class="colletion-summary">
+          <div class="collection-title-lg">
+            <!-- render collection title here -->
+          </div>
+          <div class="suggest-follow">
+            <div class="button suggest-btn">Suggest</div>
+            <div class="button follow-btn">Follow</div>
+          </div>
+        </div>
+
+        <span class="info collection-count">
+         <!-- number of products -->
+        products
+        </span> <span class="bullet">&#149;</span>
+        <span class="info collection-votes-lg">
+        100 votes
+        </span> <span class="bullet">&#149;</span>
+        <span class="info collection-followers">1000 followers</span>
+      </div>
+
+      <div class="collection-products">
+        <div class="related-collections">
+          <div class="related-header">Related Collections</div>
+          <hr>
+            
+          <div class="related-hunts">
+            <!-- user's avatar -->
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRghJMCjrZTLpxsTvoqojNt12RkA24kk-SjGRbJW2K00nQOLDiaWjZi-kI" class="avatar">
+            <div class="related-collection-name">
+            <!-- related collection name -->
+            </div>
+            <div class="collection-votes">
+              <span class="fa fa-sort-up"></span><br>
+              <span class="product-votes">50</span>
+            </div>
+          </div>
+          
+        </div>
+       
+        <div class="product-details">
+          <div class="collection-votes left">
+            <span class="fa fa-sort-up"></span><br>
+            <span class="product-votes">50</span>
+          </div>
+          <span class="deets product-name">
+            <!-- product name -->
+          </span>
+          <span class="deets product-tagline">
+            <!-- product tagline -->
+          </span>
+          <a href="#"><img src="https://api.url2png.com/v6/P5329C1FA0ECB6/bf8149a144c38ce1c05220e5a0622a2e/png/?thumbnail_max_width=300&url=https%3A%2F%2Fletsgaze.com" class="screenshot-lg"></a>
+        </div>
+
+        
+      </div>
+    </div>
 
     </div>
 
@@ -30,7 +92,6 @@
 <!-- <div class="screenshot suggest"><br><br>Submit Product</div> -->
 
   <script id="user-info-template" type="text/x-handlebars-template">
-
 
     <div class="single-collection-container" collection-id='{{ collection_name }}'>
       <div class="user-info-container">
@@ -45,9 +106,9 @@
         </div>
       </div>
 
-      <div class="products-container" id={{ id }}>
-
+      <div class="products-container" id='{{ id }}'>
       </div>
+
       <div class="follow">Follow</div>
 
     </div>
@@ -57,10 +118,16 @@
   <script id="collection-template" type="text/x-handlebars-template">
     <div class="product" product-id={{ id }}>
       <img src={{ screenshot_url.300px }} class="screenshot"><br>
-      
+    </div>
+  </script>
+
+<!-- tbu: DRY code -->
+  <script id="single-collection-details-template" type="text/x-handlebars-template">
+    <div class="collection-header">
     </div>
 
   </script>
+      
 
 
   <script src="js/handlebars-v1.3.0.js"></script>
