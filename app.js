@@ -34,7 +34,8 @@ app.all('/api/', function (req, res) {
   
 });
 
-var server = app.listen(4000, function () {
+var port = Number(process.env.PORT || 5000);
+var server = app.listen(port, function () {
 
   var host = server.address().address;
   var port = server.address().port;
