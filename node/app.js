@@ -2,13 +2,15 @@ var express = require('express');
 var app = express();
 var request = require('request');
 
+app.use(express.static(__dirname + '/static'));
+
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
  });
 
-app.all('/', function (req, res) {
+app.all('/api/', function (req, res) {
   console.log(req.query.url);
   var requestUrl = "https://api.producthunt.com/" + req.query.url;
   console.log(requestUrl);

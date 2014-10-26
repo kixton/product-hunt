@@ -25,11 +25,13 @@ var masterCollections = {
   "Fashion Hunt" : {93526: [1301, 5090, 2701, 5875, 3586, 7949, 7404, 4876, 8454, 9113]},
 };
 
+var baseUrl = "/api/";
+
 
 var getSingleItem = function(productId, userId) {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/?url=v1/posts/' + productId,
+    url: baseUrl + '?url=v1/posts/' + productId,
     dataType: 'json',  
     success: function(json_results) {
       var source = $("#collection-template").html();
@@ -47,7 +49,7 @@ var getSingleItem = function(productId, userId) {
 var getUserInfo = function(userId, collectionName, hollaback) {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/?url=v1/users/' + userId,
+    url: baseUrl + '?url=v1/users/' + userId,
     dataType: 'json',  
     success: function(json_results) {
       var source = $("#user-info-template").html();
@@ -74,7 +76,7 @@ var showCollectionDetails = function(collectionId) {
 var getUserAvatar = function(userId, hollaback) {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/?url=v1/users/' + userId,
+    url: baseUrl + '?url=v1/users/' + userId,
     dataType: 'json',  
     success: function(json_results) {
       console.log(json_results);
@@ -86,7 +88,7 @@ var getUserAvatar = function(userId, hollaback) {
 var getProductInfo2 = function(productId) {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/?url=v1/posts/' + productId,
+    url: baseUrl + '?url=v1/posts/' + productId,
     dataType: 'json',  
     success: function(json_results) {
       // console.log(json_results);
