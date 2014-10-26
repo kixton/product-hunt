@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var request = require('request');
 
+var dotenv = require('dotenv');
+dotenv.load();
+
 app.use(express.static(__dirname + '/static'));
 
 app.all('*', function(req, res, next) {
@@ -19,7 +22,7 @@ app.all('/api/', function (req, res) {
   var options = {
       url: requestUrl,
       headers: {
-          'Authorization': 'Bearer ***REMOVED***'      },
+          'Authorization': 'Bearer ' + process.env['BEARER']},
       rejectUnauthorized: false
   };
 

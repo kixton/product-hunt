@@ -7,7 +7,7 @@ var client_secret = 'secret';
 var grant_type = 'client_credentials';
 var APIkey = 'd9bc554b680a1b2743473cf73af1400b2e23b1eef0d2ca84f86689e448d60d97';
 var APIsecret = '12af57aa6d289c3d8b17585f93e0a59b08b7559108f59f61eee937b39a106902';
-var token = '***REMOVED***';
+var token = 'd05b641ca8d958cdede0075cb782bd38f6ca1b628241a11e7e53d2aabc9e2f77';
 var queryUrl = 'https://api.producthunt.com/v1/oauth/authorize?client_id=' + APIkey + 
 '&redirect_uri=' + requests.allposts + '&response_type=code&scope=public%private';
 
