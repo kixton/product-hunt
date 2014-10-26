@@ -1,0 +1,19 @@
+{
+  "name": "producthunt",
+  "version": "1.0.0",
+  "description": "Products are sups cool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kixton/product-hunt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kixton/product-hunt/issues"
+  },
+  "homepage": "https://github.com/kixton/product-hunt"
+}
