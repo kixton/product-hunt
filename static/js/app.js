@@ -155,6 +155,14 @@ $(document).ready(function() {
 
     });
 
+  $(".all-collections").on("click", ".follow", function() {
+    alert("You must be signed in to follow.");
+  })
+
+  $(".button").click(function() {
+    alert("You must be signed in.");
+  })
+
 });
 
 var clickSingleCollection = function() {

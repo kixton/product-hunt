@@ -27,9 +27,6 @@ header {
   font-weight: bold;
   float: left;
   line-height: 40px;
-  /*display: inline-block;*/
-  /*margin-bottom: 10px;*/
-  /*margin: 10px*/
 }
 
 .avatar {
@@ -320,3 +317,65 @@ header {
 .single-collection-header-votes:hover .fa {
   color: #DA552F;
 }
+
+@media screen and (max-width: 1250px) {
+  .suggest-follow {
+    top: 0%;
+  }
+  .button {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .collection-title-lg {
+    font-size: 35px;
+    line-height: 50px;
+  }
+  .info {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .title {
+    font-size: 26px;
+  }
+  .title-tagline {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .single-collection-header-votes {
+    display: none;
+  }
+  .suggest-follow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 20px;
+    line-height: 70px;
+  }
+  .title-tagline {
+    display: none;
+  }
+  .single-collection-container {
+    max-width: 80%;
+  }
+  .collection-name {
+    font-size: 16px;
+  }
+  .product {
+    width: 27%;
+  }
+  .collection-votes {
+    height: 40px;
+    width: 38px;
+    line-height: 0px;
+  }
+}
+
